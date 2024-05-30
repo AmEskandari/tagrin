@@ -16,6 +16,8 @@ aggregate_by: ['mean']
 model_name: 'grin'
 pred_loss_weight: 1
 
+num_heads: 2
+hidden_units: 256
 d_hidden: 64
 d_emb: 8
 d_ff: 64

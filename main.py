@@ -23,27 +23,13 @@ from lib.utils import parser_utils, numpy_metrics, ensure_list, prediction_dataf
 from lib.utils.parser_utils import str_to_bool
 
 
-def has_graph_support(model_cls):
-    return model_cls in [models.GRINet, models.MPGRUNet, models.BiMPGRUNet]
+def has_graph_support():
+    return models.GRINet
 
 
 def get_model_classes(model_str):
-    if model_str == 'brits':
-        model, filler = models.BRITSNet, fillers.BRITSFiller
-    elif model_str == 'grin':
+    if model_str == 'grin':
         model, filler = models.GRINet, fillers.GraphFiller
-    elif model_str == 'mpgru':
-        model, filler = models.MPGRUNet, fillers.GraphFiller
-    elif model_str == 'bimpgru':
-        model, filler = models.BiMPGRUNet, fillers.GraphFiller
-    elif model_str == 'var':
-        model, filler = models.VARImputer, fillers.Filler
-    elif model_str == 'gain':
-        model, filler = models.RGAINNet, fillers.RGAINFiller
-    elif model_str == 'birnn':
-        model, filler = models.BiRNNImputer, fillers.MultiImputationFiller
-    elif model_str == 'rnn':
-        model, filler = models.RNNImputer, fillers.Filler
     else:
         raise ValueError(f'Model {model_str} not available.')
     return model, filler
@@ -52,10 +38,6 @@ def get_model_classes(model_str):
 def get_dataset(dataset_name):
     if dataset_name[:3] == 'air':
         dataset = datasets.AirQuality(impute_nans=True, small=dataset_name[3:] == '36')
-    elif dataset_name == 'bay_block':
-        dataset = datasets.MissingValuesPemsBay()
-    elif dataset_name == 'la_block':
-        dataset = datasets.MissingValuesMetrLA()
     elif dataset_name == 'la_point':
         dataset = datasets.MissingValuesMetrLA(p_fault=0., p_noise=0.25)
     elif dataset_name == 'bay_point':
