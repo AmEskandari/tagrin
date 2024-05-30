@@ -3,7 +3,7 @@ import os
 import numpy as np
 import pandas as pd
 
-from lib import datasets_path
+from src import datasets_path
 from .pd_dataset import PandasDataset
 from ..utils.utils import disjoint_months, infer_mask, compute_mean, geographical_distance, thresholded_gaussian_kernel
 

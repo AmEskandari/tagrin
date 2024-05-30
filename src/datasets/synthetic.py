@@ -5,7 +5,7 @@ import torch
 from einops import rearrange
 from torch.utils.data import Dataset, DataLoader, Subset
 
-from lib import datasets_path
+from src import datasets_path
 
 
 def generate_mask(shape, p_block=0.01, p_point=0.01, max_seq=1, min_seq=1, rng=None):

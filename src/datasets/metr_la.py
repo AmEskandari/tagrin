@@ -3,7 +3,7 @@ import os
 import numpy as np
 import pandas as pd
 
-from lib import datasets_path
+from src import datasets_path
 from .pd_dataset import PandasDataset
 from ..utils import sample_mask
 

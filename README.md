@@ -1,41 +1,46 @@
 # Papers Name [link]
 
-
-- #TODO: Abstract of the paper.
-- #TODO: A figure of the proposed method.
-- #TODO: How to run the code
-  - Env
-  - Running and the results
-
-
-- #TODO: How to run for different datasets
-<!---
-[![ICLR](https://img.shields.io/badge/ICLR-2022-blue.svg?style=flat-square)](https://openreview.net/forum?id=kOu3-S3wJ7)
-[![PDF](https://img.shields.io/badge/%E2%87%A9-PDF-orange.svg?style=flat-square)](https://openreview.net/pdf?id=kOu3-S3wJ7)
-[![arXiv](https://img.shields.io/badge/arXiv-2108.00298-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2108.00298)
--->
-
-
-<!---
----
-
-<h2 align=center>GRIN in a nutshell</h2>
-
-The [paper](https://arxiv.org/abs/2108.00298) introduces __GRIN__, a method and an architecture to exploit relational inductive biases to reconstruct missing values in multivariate time series coming from sensor networks. GRIN features a bidirectional recurrent GNN which learns __spatio-temporal node-level representations__ tailored to reconstruct observations at neighboring nodes.
-
-<p align=center>
-  <a href="https://github.com/marshka/sinfony">
-    <img src="./grin.png" alt="Logo"/>
-  </a>
-</p>
-
---->
+#TODO: Discussing the paper and the the figure
 
 ## Datasets
 
 All the datasets used in the experiment, except CER-E, are open and can be downloaded from this [link](https://mega.nz/folder/qwwG3Qba#c6qFTeT7apmZKKyEunCzSg). The CER-E dataset can be obtained free of charge for research purposes following the instructions at this [link](https://www.ucd.ie/issda/data/commissionforenergyregulationcer/). We recommend storing the downloaded datasets in a folder named `datasets` inside this directory.
 
-## Configuration files
+## How to Run and Replicate the Result
+To run the code, you first need to set up the Python environment. This can be done using the `env.yml` file provided. Follow these steps to install and activate the environment using Conda:
 
-The `config` directory stores all the configuration files used to run the experiment. They are divided into folders, according to the model.
+- Install the environment:
+   ```bash
+   conda env create -f env.yml
+   conda activate grin
+
+
+Once the environment is set up, you can proceed with the benchmarks using the four datasets provided. Each dataset has its respective command for training and evaluation:
+
+- AQI:
+  ```bash
+   python ss
+
+- AQI36:
+  ```bash
+   python ss
+
+- PEMSBAY
+  ```bash
+    python ss
+
+- METRLA
+  ```bash
+    python ss
+
+After training and evaluation, the results will be stored in directories named after each dataset:
+  ```
+  /path/to/results/aqi
+  /path/to/results/aqi36
+  /path/to/results/pemsbay
+  /path/to/results/metrla
+
+
+  ```
+
 
